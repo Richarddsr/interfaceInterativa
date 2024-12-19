@@ -1,11 +1,46 @@
 import tkinter as tk
 from tkinter import messagebox
+def testar():
+    messagebox.showwarning("Alerta⚠️⚠️⚠️⚠️", "Tá funfante😱😱😱")
 
 # Função simples para atualizar o texto de um label
 def packz():
     # Modifica o texto do label "teste" para mostrar que o botão foi clicado
     # Isso demonstra como podemos alterar dinamicamente os widgets
+    janela_pack = tk.Toplevel(root)
+    janela_pack.title("Gerenciador pack🤓")  # Define o título da janela
+    janela_pack.geometry("300x300")
+    textpack = tk.Label(
+        janela_pack, 
+        text="Texto 1 gerado com pack",  # Texto do label
+        font=('Cardinal', 10, 'bold'),  # Estilização da fonte
+    )
+    textpack.pack(pady=12, padx=10)
     teste.config(text="Tá funfante")
+
+    textpack2 = tk.Label(
+        janela_pack, 
+        text="Texto 2 gerado com pack",  # Texto do label
+        font=('Cardinal', 10, 'bold'),  # Estilização da fonte
+    )
+    textpack2.pack(pady=0, padx=10)
+
+    buttontest = tk.Button(
+    janela_pack,
+    text="Testar",
+    font=('Cardinal', 10, 'bold'), # Estilização
+    command=testar
+    )
+    buttontest.pack(pady=12, padx=10)
+
+    buttontest1 = tk.Button(
+    janela_pack,
+    text="Fechar",
+    font=('Cardinal', 10, 'bold'), # Estilização
+    command=janela_pack.destroy
+    )
+    buttontest1.pack(pady=0, padx=10)
+
 
 # Função para criar uma interface usando o gerenciador de layout place()
 def criar_interface_place():
@@ -43,6 +78,7 @@ def criar_interface_place():
         text="Testar",  # Texto do botão
         command=exibirPlace  # Ação ao clicar no botão
     ).place(x=50, y=200, width=100, height=40)
+    teste.config(text="Tá funfante!!!!!!")
 
     tk.Button(
         janela_place, 
@@ -55,7 +91,7 @@ def criar_interface_grid():
     # Cria uma nova janela secundária
     janela_grid = tk.Toplevel(root)
     janela_grid.title("Grid?!?!?!📐")  # Título divertido para a janela
-    janela_grid.geometry("400x400")
+    janela_grid.geometry("300x300")
 
     # Adiciona widgets usando o layout grid()
     # grid() organiza widgets em linhas e colunas, similar a uma planilha
@@ -75,9 +111,10 @@ def criar_interface_grid():
     # Adiciona botões usando grid layout
     tk.Button(
         janela_grid, 
-        text="Testar", 
+        text="Testar",
         command=mostrar_dados
     ).grid(row=4, column=0, columnspan=2, pady=10)
+    teste.config(text="Tá funfante!!!")
 
     tk.Button(
         janela_grid, 
@@ -116,108 +153,4 @@ tk.Button(root, text="Abrir Place Layout", command=criar_interface_place).pack(p
 teste = tk.Label(root, text="", font=("Arial", 10), bg="white", fg="black")
 teste.pack(padx=20, pady=20)
 
-# Executa o loop principal
 root.mainloop()
-import tkinter as tk
-from tkinter import messagebox
-
-# 🔄 Função simples para atualizar dinamicamente um label
-def packz():
-    # 🖌️ Modifica o texto do label, mostrando como widgets podem ser alterados
-    teste.config(text="Tá funfante")
-
-# 🪟 Função para criar uma interface usando o gerenciador de layout place()
-def criar_interface_place():
-    # 🆕 Cria uma janela secundária que é filha da janela principal
-    # 🌈 Permite criar interfaces adicionais sem fechar a janela original
-    janela_place = tk.Toplevel(root)
-    janela_place.title("Gerenciador place()") # 🏷️ Define o título da janela
-    janela_place.geometry("300x300")  # 📏 Define o tamanho da janela
-
-    # 🏷️ Criando labels usando o gerenciador place()
-    # 📍 place() permite posicionamento preciso de widgets
-    # 🎯 Útil para layouts que precisam de coordenadas exatas
-    tk.Label(
-        janela_place, 
-        text="Texto 1 gerado com place",  # 💬 Texto do label
-        font=('Arial', 10, 'bold'),  # 🖋️ Estilização da fonte
-    ).place(x=50, y=50, width=200, height=30)  # 📐 Posicionamento preciso
-
-    tk.Label(
-        janela_place, 
-        text="Texto 2 gerado com place",  
-        font=('Arial', 10, 'bold')
-    ).place(x=50, y=100, width=200, height=30)
-    
-    # 🚨 Função interna para exibir uma mensagem de alerta
-    # 📢 Demonstra interações com o usuário
-    def exibirPlace():
-        # ⚠️ showwarning() exibe uma caixa de diálogo de aviso
-        messagebox.showwarning("Alerta!!!!!!", "Tá funfante")
-
-    # 🔘 Criando botões usando place()
-    # 🖱️ Cada botão tem texto e ação associada
-    tk.Button(
-        janela_place, 
-        text="Testar",  # 🏷️ Texto do botão
-        command=exibirPlace  # 🎬 Ação ao clicar no botão
-    ).place(x=50, y=200, width=100, height=40)
-
-    tk.Button(
-        janela_place, 
-        text="Fechar",  # 🚪 Texto do botão
-        command=janela_place.destroy  # 🔒 Fecha a janela atual
-    ).place(x=160, y=200, width=100, height=40)
-
-# ... (resto do código permanece igual)import tkinter as tk
-from tkinter import messagebox
-
-# 🔄 Função simples para atualizar dinamicamente um label
-def packz():
-    # 🖌️ Modifica o texto do label, mostrando como widgets podem ser alterados
-    teste.config(text="Tá funfante")
-
-# 🪟 Função para criar uma interface usando o gerenciador de layout place()
-def criar_interface_place():
-    # 🆕 Cria uma janela secundária que é filha da janela principal
-    # 🌈 Permite criar interfaces adicionais sem fechar a janela original
-    janela_place = tk.Toplevel(root)
-    janela_place.title("Gerenciador place()") # 🏷️ Define o título da janela
-    janela_place.geometry("300x300")  # 📏 Define o tamanho da janela
-
-    # 🏷️ Criando labels usando o gerenciador place()
-    # 📍 place() permite posicionamento preciso de widgets
-    # 🎯 Útil para layouts que precisam de coordenadas exatas
-    tk.Label(
-        janela_place, 
-        text="Texto 1 gerado com place",  # 💬 Texto do label
-        font=('Arial', 10, 'bold'),  # 🖋️ Estilização da fonte
-    ).place(x=50, y=50, width=200, height=30)  # 📐 Posicionamento preciso
-
-    tk.Label(
-        janela_place, 
-        text="Texto 2 gerado com place",  
-        font=('Arial', 10, 'bold')
-    ).place(x=50, y=100, width=200, height=30)
-    
-    # 🚨 Função interna para exibir uma mensagem de alerta
-    # 📢 Demonstra interações com o usuário
-    def exibirPlace():
-        # ⚠️ showwarning() exibe uma caixa de diálogo de aviso
-        messagebox.showwarning("Alerta!!!!!!", "Tá funfante")
-
-    # 🔘 Criando botões usando place()
-    # 🖱️ Cada botão tem texto e ação associada
-    tk.Button(
-        janela_place, 
-        text="Testar",  # 🏷️ Texto do botão
-        command=exibirPlace  # 🎬 Ação ao clicar no botão
-    ).place(x=50, y=200, width=100, height=40)
-
-    tk.Button(
-        janela_place, 
-        text="Fechar",  # 🚪 Texto do botão
-        command=janela_place.destroy  # 🔒 Fecha a janela atual
-    ).place(x=160, y=200, width=100, height=40)
-
-# ... (resto do código permanece igual)
